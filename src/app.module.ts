@@ -2,10 +2,10 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import entities from 'typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { join } from 'path';
 import { UsersModule } from './users/users.module';
+import { UserEntity } from './users/entities/user.entity';
 
 @Module({
   imports: [
@@ -23,7 +23,7 @@ import { UsersModule } from './users/users.module';
         username: config.get('DB_USERNAME'),
         password: config.get('DB_PASSWORD'),
         database: config.get('DB_NAME'),
-        entities: entities,
+        entities: [UserEntity],
         synchronize: true,
       }),
       inject: [ConfigService],
