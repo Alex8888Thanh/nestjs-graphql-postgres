@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest, GraphQL and PostgreSQL Logos" />
+  <img src="https://user-images.githubusercontent.com/64763336/194779214-19756220-b633-441c-b570-494565f36509.png" width="800" alt="Nest, GraphQL and PostgreSQL Logos" />
 </p>
 
   <p align="center">CRUD using NestJS, GraphQL and PostegreSQL</p>
