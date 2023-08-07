@@ -1,0 +1,68 @@
+POST http://localhost:3000/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation {
+  createUser(createUserInput: { name: "test", email: "test@email.com" }) {
+    id
+    name
+    email
+  }
+}
+
+###
+
+POST http://localhost:3000/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query {
+  users {
+    id
+    name
+    email
+  }
+}
+
+###
+
+POST http://localhost:3000/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query {
+  user(id: "0d7155e8-926b-4655-90cb-f1376a4eab37") {
+    name
+    email
+  }
+}
+
+###
+
+POST http://localhost:3000/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation {
+  updateUser(
+    updateUserInput: {
+      id: "0d7155e8-926b-4655-90cb-f1376a4eab37"
+      name: "test again"
+      email: "test@email.com"
+    }
+  ) {
+    id
+    name
+    email
+  }
+}
+
+###
+
+POST http://localhost:3000/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation {
+  removeUser(id: "0d7155e8-926b-4655-90cb-f1376a4eab37")
+}
